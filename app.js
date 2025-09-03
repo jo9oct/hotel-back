@@ -20,7 +20,7 @@ app.use(cookieParser())
 
 app.use(
     cors({
-        origin: "https://hotel-front-k5t6.vercel.app",
+        origin: "https://hotel-menu-32.onrender.com",
         credentials: true,
     })
 );
