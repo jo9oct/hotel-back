@@ -119,10 +119,12 @@ export const Logout= async (req,res) =>{
 
     try{
         res.clearCookie("token", {
-          httpOnly: true,
-          secure: true,
-          sameSite: "none", // must match how it was set
-        });
+        httpOnly: true,
+        secure: true,
+        sameSite: "none",
+        path: "/", // match the original cookie path
+        // domain: "hotel-back-4-bq45.onrender.com", // optional if explicitly set during cookie creation
+      });
         res.status(200).json({
             success:true,
             massage: "Log Out Successfully"
