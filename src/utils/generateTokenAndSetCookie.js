@@ -7,10 +7,11 @@ export const generateTokenAndSetCookie= (res,userID) =>{
     })
     console.log("token" , token)
     res.cookie("token", token, {
-        httpOnly: true,
-        secure: true,  // only true on production
-        sameSite: "none",
-        maxAge: 7 * 24 * 60 * 60 * 1000,
+      httpOnly: true,
+      secure: true, // must be HTTPS
+      sameSite: "none", // cross-domain
+      path: "/", // important!
+      maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
     return token;
